@@ -1,14 +1,29 @@
-<router-outlet name="navbar"></router-outlet>
-<div class="app-body">
-  <div class="sidebar"><router-outlet name="sidebar"></router-outlet></div>
-  <!-- Main content -->
-  <main class="main">
-    <div class="container-fluid">
-      <div class="card jh-card">
+<nb-layout>
+  <nb-layout-header fixed *ngIf="isAuthenticated()">
+    <ngx-header></ngx-header>
+    <router-outlet name="navbar"></router-outlet>
+  </nb-layout-header>
+
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive *ngIf="isAuthenticated()">
+    <nb-sidebar-header>
+      <a href="#" class="btn btn-hero-success main-btn">
+        <i class="ion ion-social-github"></i> <span>Support Us</span>
+      </a>
+    </nb-sidebar-header>
+    <ng-content select="nb-menu"></ng-content>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-body>
         <router-outlet></router-outlet>
         <router-outlet name="popup"></router-outlet>
-      </div>
-    </div><!-- /.conainer-fluid -->
-  </main>
-</div>
-<jhi-footer></jhi-footer>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <ngx-footer></ngx-footer>
+    <jhi-footer></jhi-footer>
+  </nb-layout-footer>
+</nb-layout>

@@ -10,10 +10,10 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CoreModule } from './@core/core.module';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppComponent } from './app.component';
+// import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // JHIPSTER SPECIFIC MODULES
 import { Ng2Webstorage } from 'ngx-webstorage';
@@ -31,7 +31,6 @@ import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import {
     JhiMainComponent,
     NavbarComponent,
-    SidebarComponent,
     FooterComponent,
     ProfileService,
     PageRibbonComponent,
@@ -41,11 +40,10 @@ import {
 
 @NgModule({
   declarations: [
-    AppComponent,
+    // AppComponent,
     // JH Layout
     JhiMainComponent,
     NavbarComponent,
-    SidebarComponent,
     ErrorComponent,
     PageRibbonComponent,
     ActiveMenuDirective,
@@ -55,9 +53,9 @@ import {
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    AppRoutingModule,
+    // AppRoutingModule,
 
-    NgbModule.forRoot(),
+    // NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
     // JHipster
@@ -69,7 +67,7 @@ import {
     AccountModule,
     EntityModule,
   ],
-  bootstrap: [AppComponent, JhiMainComponent],
+  bootstrap: [JhiMainComponent],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
     ProfileService,
