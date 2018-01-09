@@ -16,4 +16,4 @@ const LAYOUT_ROUTES = [
         RouterModule
     ]
 })
-export class SdpAppRoutingModule {}
+export class JhAppRoutingModule {}

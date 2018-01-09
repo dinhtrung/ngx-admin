@@ -4,7 +4,7 @@ import { registerLocaleData } from '@angular/common';
 import locale from '@angular/common/locales/en';
 
 import { WindowRef } from './tracker/window.service';
-import { SdpSharedLibsModule } from './shared-libs.module';
+import { SharedLibsModule } from './shared-libs.module';
 import {
     JhiLanguageHelper,
     FindLanguageFromKeyPipe,
@@ -14,7 +14,7 @@ import {
 
 @NgModule({
     imports: [
-        SdpSharedLibsModule
+        SharedLibsModule
     ],
     declarations: [
         FindLanguageFromKeyPipe,
@@ -31,13 +31,13 @@ import {
         },
     ],
     exports: [
-        SdpSharedLibsModule,
+        SharedLibsModule,
         FindLanguageFromKeyPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ]
 })
-export class SdpSharedCommonModule {
+export class SharedCommonModule {
     constructor() {
         registerLocaleData(locale);
     }

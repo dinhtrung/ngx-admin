@@ -1,14 +1,14 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { SdpSharedModule } from '../shared';
+import { SharedModule } from '../shared';
 
 import { HomeComponent } from './home.component';
 import { HOME_ROUTE } from './home.route';
 
 @NgModule({
     imports: [
-        SdpSharedModule,
+        SharedModule,
         RouterModule.forChild([ HOME_ROUTE ])
     ],
     declarations: [
@@ -20,4 +20,4 @@ import { HOME_ROUTE } from './home.route';
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SdpHomeModule {}
+export class HomeModule {}

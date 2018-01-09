@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { SdpSharedCommonModule } from './shared-common.module';
-import { SdpSharedLibsModule } from './shared-libs.module';
+import { SharedCommonModule } from './shared-common.module';
+import { SharedLibsModule } from './shared-libs.module';
 import {
     CSRFService,
     AuthServerProvider,
@@ -20,8 +20,8 @@ import {
 
 @NgModule({
     imports: [
-        SdpSharedLibsModule,
-        SdpSharedCommonModule
+        SharedLibsModule,
+        SharedCommonModule
     ],
     declarations: [
         JhiSocialComponent,
@@ -43,7 +43,7 @@ import {
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
-        SdpSharedCommonModule,
+        SharedCommonModule,
         JhiSocialComponent,
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
@@ -52,4 +52,4 @@ import {
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class SdpSharedModule {}
+export class SharedModule {}

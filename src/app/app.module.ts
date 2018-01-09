@@ -18,15 +18,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // JHIPSTER SPECIFIC MODULES
 import { Ng2Webstorage } from 'ngx-webstorage';
 
-import { SdpSharedModule, UserRouteAccessService } from './shared';
-import { SdpAppRoutingModule} from './jh-app-routing.module';
-import { SdpHomeModule } from './home/home.module';
-import { SdpAdminModule } from './admin/admin.module';
-import { SdpAccountModule } from './account/account.module';
-import { SdpEntityModule } from './entities/entity.module';
+import { SharedModule, UserRouteAccessService } from './shared';
+import { JhAppRoutingModule} from './jh-app-routing.module';
+import { HomeModule } from './home/home.module';
+import { AdminModule } from './admin/admin.module';
+import { AccountModule } from './account/account.module';
+import { EntityModule } from './entities/entity.module';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 
+// Application Layouts
 import {
     JhiMainComponent,
     NavbarComponent,
@@ -60,13 +61,13 @@ import {
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
     // JHipster
-    SdpAppRoutingModule,
+    JhAppRoutingModule,
     Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
-    SdpSharedModule,
-    SdpHomeModule,
-    SdpAdminModule,
-    SdpAccountModule,
-    SdpEntityModule,
+    SharedModule,
+    HomeModule,
+    AdminModule,
+    AccountModule,
+    EntityModule,
   ],
   bootstrap: [AppComponent, JhiMainComponent],
   providers: [

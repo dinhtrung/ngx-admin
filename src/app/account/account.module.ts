@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { SdpSharedModule } from '../shared';
+import { SharedModule } from '../shared';
 
 import {
     Register,
@@ -23,7 +23,7 @@ import { accountState } from './account.route';
 
 @NgModule({
     imports: [
-        SdpSharedModule,
+        SharedModule,
         RouterModule.forChild(accountState)
     ],
     declarations: [
@@ -46,4 +46,4 @@ import { accountState } from './account.route';
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SdpAccountModule {}
+export class AccountModule {}
