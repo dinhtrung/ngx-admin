@@ -19,3 +19,6 @@ export * from './settings/settings.route';
 export * from './social/social-auth.component';
 export * from './social/social-register.component';
 export * from './social/social.route';
+export * from './login/login.service';
+export * from './login/login.component';
+export * from './login/login.route';
