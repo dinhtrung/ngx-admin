@@ -1,16 +1,16 @@
-import { Component, AfterViewInit, Renderer, ElementRef } from '@angular/core';
+import { Component, OnInit, Renderer, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { LoginService } from './login.service';
-import { StateStorageService } from '../../shared';
+import { StateStorageService, Principal } from '../../shared';
 
 @Component({
     selector: 'jhi-login',
     templateUrl: './login.component.html',
-    styleUrls: [ 'login.css' ]
+    // styleUrls: [ 'login.css' ]
 })
-export class LoginComponent implements AfterViewInit {
+export class LoginComponent implements OnInit {
     authenticationError: boolean;
     password: string;
     rememberMe: boolean;
@@ -22,14 +22,17 @@ export class LoginComponent implements AfterViewInit {
         private loginService: LoginService,
         private stateStorageService: StateStorageService,
         private elementRef: ElementRef,
-        private renderer: Renderer,
         private router: Router,
+        private principal: Principal,
     ) {
         this.credentials = {};
     }
 
-    ngAfterViewInit() {
-        this.renderer.invokeElementMethod(this.elementRef.nativeElement.querySelector('#username'), 'focus', []);
+    ngOnInit() {
+      this.principal.identity().then((account) => {
+        console.log('Found account:', account);
+          this.router.navigate(['/home']);
+      });
     }
 
     cancel() {
